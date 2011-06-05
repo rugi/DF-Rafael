@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html lang="en"> 
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title>Raphaël · DF</title> 
+        <link rel="stylesheet" href="demo.css" type="text/css" media="screen"> 
+        <link rel="stylesheet" href="demo-print.css" type="text/css" media="print"> 
+        <style type="text/css" media="screen"> 
+            #canvas {
+                height: 750px;
+                left: 30%;
+                margin: -260px 0 0 -300px;
+                position: absolute;
+                top: 50%;
+                width: 800px;
+            }
+            #paper {
+                height: 700px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 700px;
+            }
+            #aob, #azc ,#bjr, #coy, #cjm, #cua, #gam ,#izc, #izp, #mac, #mih, #mia ,#thc ,#tla, #vec, #xoc{
+                display: none;
+                height: 400px;
+                overflow: auto;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 300px;
+            }
+            h2 {
+                text-align: center;
+            }
+        </style> 
+        <script src="js/raphael.js" type="text/javascript" charset="utf-8"></script> 
+        <script type="text/javascript" charset="utf-8"> 
+        window.onload = function () {
+            var R = Raphael("paper", 750, 750);
+            var attr = {
+                fill: "#333",
+                stroke: "#666",
+                "stroke-width": 1,
+                "stroke-linejoin": "round"
+            };
+            var aus = {};
+			//Gustavo A. Madero>>gam
+            aus.gam = R.path("M 300.76736,1.658834 L 314.56403,35.598637 L 287.52256,71.469979 L 289.45409,95.47617 L 312.08063,105.96164 L 323.11796,106.23758 L 330.01629,102.37451 L 371.95817,120.03425 L 366.16357,131.89939 L 392.1013,185.43046 L 375.26937,191.77692 L 353.19469,182.94705 L 347.95197,187.91385 L 339.67397,182.94705 L 331.94783,182.67112 L 331.12003,184.60265 L 319.25489,182.39519 L 286.69476,163.90765 L 272.8981,164.73545 L 256.06615,124.44918 L 248.89189,94.92432 L 232.61182,90.50938 L 233.16369,85.81851 L 222.12635,75.057107 L 249.71969,83.33511 L 254.68649,78.644245 L 248.89189,73.125569 L 257.99769,60.432639 L 249.16782,50.774972 L 255.51429,36.978303 L 263.24042,38.35797 L 272.34622,16.835167 L 287.24662,0.003233 L 300.76736,1.658834 z").attr(attr);
+			//Azcapotzalco>>azc
+            aus.azc = R.path("M 190.66995,105.68571 L 176.87329,154.52591 L 190.94588,160.04459 L 189.56622,163.07986 L 192.60148,163.07986 L 192.32555,159.49272 L 213.02055,158.94084 L 212.74462,166.66698 L 217.98735,170.80598 L 230.12843,175.77279 L 238.40642,175.49685 L 238.95829,178.25618 L 245.85662,177.70432 L 245.85662,175.22091 L 253.58276,166.94292 L 259.65329,167.21885 L 261.86075,169.70225 L 265.17196,169.97819 L 270.13876,164.73545 L 253.30682,123.62138 L 251.92716,116.99898 L 198.12015,102.65044 L 190.66995,105.68571 	 z").attr(attr);
+			//Venustiano Carranza>>vec 
+            aus.vec = R.path("M 392.65317,187.08605 L 375.82123,193.98439 L 353.74657,185.43046 L 347.95197,190.94913 L 339.39803,184.60265 L 333.60343,184.32672 L 333.05156,187.08605 L 318.4271,184.05079 L 301.59516,175.22091 L 297.73209,188.74165 L 302.42296,193.98439 L 297.45616,243.65239 L 316.7715,243.65239 L 321.18643,239.51339 L 347.12417,238.96152 L 350.15943,241.16899 L 356.22996,240.89306 L 364.7839,224.88892 L 369.47476,221.85366 L 383.82331,221.85366 L 396.51624,194.26033 L 392.65317,187.08605 z").attr(attr);
+			//IZtacalco>>izc
+            aus.izc = R.path("M 287.7985,279.52373 L 299.3877,281.7312 L 299.3877,275.1088 L 335.25904,277.5922 L 342.70924,262.13993 L 348.50384,261.86399 L 349.33163,259.3806 L 373.8897,272.6254 L 379.68431,271.24573 L 383.82331,223.50926 L 370.30257,223.50926 L 365.88763,226.54453 L 357.88556,242.27272 L 349.60757,243.10053 L 346.5723,240.61713 L 322.29016,240.61713 L 317.04743,245.85986 L 295.2487,245.58393 L 290.83376,245.85986 L 289.73002,252.20632 L 293.5931,252.48226 L 287.7985,279.52373 z").attr(attr);
+			//Miguel Hidalgo>>mih
+            aus.mih = R.path("M 182.11601,183.49892 L 189.01434,164.73545 L 194.80894,163.90765 L 194.53302,161.14832 L 211.91682,160.59645 L 211.36495,167.21885 L 217.98735,172.73752 L 229.85249,177.42838 L 237.02676,177.70432 L 237.30269,180.18772 L 245.85662,179.63585 L 246.68442,189.01758 L 239.78609,205.84953 L 235.09522,209.71259 L 233.99149,217.43873 L 230.40435,218.26652 L 230.95622,229.57979 L 221.02262,240.61713 L 223.23008,246.68766 L 229.85249,246.1358 L 235.37115,247.51547 L 237.02676,252.20632 L 219.91888,259.65652 L 216.33175,257.44906 L 210.53715,246.68766 L 204.46662,252.20632 L 188.18655,252.75819 L 186.25501,256.62127 L 178.52888,254.96566 L 173.01021,260.48433 L 154.52268,261.58806 L 152.31521,270.41793 L 143.20941,270.69387 L 141.82974,269.59013 L 145.41688,262.41587 L 135.75921,262.41587 L 133.82768,260.76026 L 134.37954,249.44699 L 142.38161,242.27272 L 157.28202,238.96152 L 171.35461,221.30179 L 170.25088,202.53832 L 177.42514,197.84746 L 178.80481,183.77486 L 182.11601,183.49892 z").attr(attr);
+			//Cuauhtemoc>>cua
+            aus.cua = R.path("M 299.11176,173.84125 L 286.69476,166.11512 L 272.07029,166.66698 L 267.37942,171.35785 L 260.48109,171.90972 L 257.99769,169.15039 L 254.68649,169.42631 L 248.06408,176.32465 L 248.34002,190.67319 L 241.99356,206.67732 L 237.02676,211.36819 L 235.64709,218.54246 L 232.88776,220.19805 L 232.88776,231.2354 L 223.23008,240.34119 L 224.60975,244.20426 L 229.85249,243.92833 L 237.30269,246.41172 L 238.68236,251.37853 L 258.82549,244.20426 L 278.14082,245.58393 L 295.80056,243.10053 L 300.21549,194.26033 L 294.42089,189.29352 L 299.11176,173.84125 z").attr(attr);
+			//Benito Juarez >>bjr
+            aus.bjr = R.path("M 278.96863,307.94487 L 240.06202,307.66894 L 232.05995,300.7706 L 226.54129,303.52993 L 221.57448,303.52993 L 217.71142,301.5984 L 217.71142,297.18347 L 214.40021,295.25193 L 215.22802,274.281 L 219.36702,271.7976 L 219.91888,261.86399 L 259.65329,245.85986 L 280.62422,247.79139 L 288.07442,246.68766 L 287.24662,253.586 L 290.83376,254.4138 L 278.96863,307.94487 z").attr(attr);
+			//Alvaro Obregon >>aob
+            aus.aob = R.path("M 226.95519,321.60356 L 232.88776,319.53407 L 232.33589,312.3598 L 237.57862,310.7042 L 237.30269,308.2208 L 232.05995,302.4262 L 227.92095,305.46147 L 219.64296,305.18554 L 215.50395,303.254 L 215.77988,299.115 L 211.91682,296.90753 L 212.74462,273.72913 L 217.15955,270.41793 L 218.26329,261.31213 L 214.95209,259.3806 L 209.43342,249.99886 L 205.57035,254.13786 L 190.39401,254.4138 L 188.18655,259.10467 L 179.35668,257.17312 L 174.94175,262.13993 L 155.90235,263.5196 L 153.65611,271.93556 L 144.03721,272.07353 L 145.14094,273.72913 L 140.45007,281.17933 L 132.44801,280.62746 L 129.68867,284.76646 L 130.24054,291.94073 L 120.03101,289.45733 L 116.16795,293.3204 L 120.8588,294.97601 L 121.96254,305.73739 L 129.13681,306.84114 L 126.92934,315.39507 L 124.44594,315.39507 L 132.17208,320.91373 L 120.30695,335.5382 L 106.51027,339.95314 L 105.9584,344.09213 L 97.40447,342.9884 L 91.88581,348.23114 L 90.78208,361.20001 L 85.53934,367.27054 L 78.089135,366.44274 L 77.537275,360.64814 L 76.157609,362.0278 L 77.813201,366.71867 L 81.952209,369.20207 L 81.952209,373.06514 L 72.294538,380.51535 L 65.120271,380.23941 L 60.705337,389.62115 L 61.533137,419.42195 L 52.427335,434.32235 L 39.458468,471.02149 L 42.769668,471.84928 L 42.769668,475.16049 L 46.632736,476.54015 L 47.460534,479.02355 L 59.877536,448.39495 L 81.400339,440.94475 L 100.43974,420.52568 L 100.99161,410.04021 L 108.99367,412.52361 L 111.47708,407.55681 L 107.88994,404.52155 L 115.34014,383.27467 L 118.09947,380.23941 L 114.51235,378.85974 L 114.23641,371.13361 L 122.23847,372.23734 L 136.58701,350.43861 L 153.69488,348.50706 L 154.24675,354.30167 L 159.48948,355.40541 L 161.69695,349.61081 L 182.94381,338.29753 L 198.12015,338.84941 L 192.60148,344.91994 L 189.84215,353.47387 L 180.46041,362.0278 L 179.63262,369.20207 L 183.77162,373.89294 L 193.42928,377.75601 L 196.74048,377.75601 L 211.08901,357.06101 L 211.08901,345.19587 L 205.57035,341.3328 L 210.81309,337.1938 L 217.15955,337.46974 L 219.91888,330.01953 L 224.60975,329.19173 L 226.95519,321.60356 z").attr(attr);
+			//Cuajimalpa>>cjm
+            aus.cjm = R.path("M 132.17208,251.10259 L 129.41275,252.75819 L 129.13681,258.82873 L 123.06628,258.82873 L 117.27168,269.86607 L 112.02894,269.86607 L 112.02894,282.559 L 106.51027,290.56107 L 101.54347,283.11087 L 97.6804,283.11087 L 97.40447,288.3536 L 87.19494,292.21666 L 79.744737,299.66686 L 76.985405,298.83906 L 75.605739,288.62953 L 72.846405,286.42206 L 67.60367,293.04446 L 62.085003,299.94279 L 53.255135,305.18554 L 51.875468,307.11706 L 54.082935,312.91166 L 50.771736,315.39507 L 45.253069,314.0154 L 41.390001,317.60253 L 41.665935,322.01746 L 46.080867,324.22494 L 45.804935,335.26227 L 41.114067,335.5382 L 40.286267,342.9884 L 37.526933,346.02367 L 38.630668,352.0942 L 34.491668,349.05894 L 33.387933,349.05894 L 33.387933,353.47387 L 34.7676,355.12947 L 17.107865,369.75394 L 17.383799,374.16887 L 13.796665,374.16887 L 12.692931,372.7892 L 11.86513,376.37634 L 12.968865,379.13568 L 9.381731,380.79128 L 7.450198,380.79128 L 6.89833,382.72281 L 9.381731,387.13774 L 13.796665,387.41368 L 16.004133,400.10662 L 11.313264,403.96968 L 11.86513,407.55681 L 9.657663,409.48834 L 6.346464,409.21241 L 0.275931,416.11075 L -3e-06,421.62941 L 19.315332,422.45722 L 19.039398,426.59622 L 22.626532,426.59622 L 28.697067,432.39082 L 28.421133,437.63354 L 33.939799,438.18542 L 34.491668,441.22068 L 29.248933,444.80781 L 29.248933,468.53808 L 33.387933,469.64182 L 33.387933,472.40115 L 36.975067,470.74555 L 50.495802,432.11488 L 59.32567,419.14601 L 58.49787,388.79334 L 64.29247,378.03195 L 72.018604,378.5838 L 79.744737,372.51327 L 79.744737,370.58174 L 75.881675,368.37427 L 73.950137,361.47594 L 79.192867,356.78507 L 79.468801,363.95934 L 84.43561,364.78713 L 89.12648,359.54441 L 90.2302,346.57554 L 97.12854,340.505 L 103.75094,341.60873 L 104.85467,338.02161 L 118.65134,334.15854 L 129.13681,320.91373 L 120.8588,314.29134 L 124.99781,313.73947 L 126.6534,308.49673 L 120.58288,307.11706 L 118.92728,296.35567 L 113.4086,294.42413 L 120.58288,287.24986 L 128.58494,290.0092 L 127.75714,283.66273 L 131.34427,278.97186 L 139.07041,279.52373 L 142.10568,273.45319 L 138.79448,269.3142 L 142.10568,264.34739 L 134.37954,264.34739 L 131.89614,260.2084 L 132.17208,251.10259 z").attr(attr);
+			//Magdalena contreras >>mac
+            aus.mac = R.path("M 87.19494,498.06295 L 80.572543,497.78702 L 62.360935,488.68122 L 61.809069,485.92189 L 58.221935,482.88662 L 57.118203,480.40321 L 51.875468,480.40321 L 51.599536,481.23102 L 48.840201,481.23102 L 61.257203,450.05055 L 83.055941,442.60035 L 102.64721,421.35347 L 102.64721,412.79955 L 110.37333,415.28294 L 114.78827,407.00495 L 110.37333,403.96968 L 116.99574,384.93028 L 121.13474,379.13568 L 116.99574,377.75601 L 115.89201,373.06514 L 123.61814,373.617 L 137.96668,351.81827 L 152.31521,350.43861 L 152.86708,356.78507 L 160.59322,357.61287 L 162.80068,351.26641 L 183.49568,339.95314 L 195.08488,340.22907 L 189.84215,345.47181 L 188.73842,352.64608 L 178.52888,361.20001 L 178.52888,371.40954 L 173.28615,371.40954 L 166.38782,379.41161 L 166.38782,384.10247 L 162.80068,392.65641 L 152.03927,394.58794 L 151.48742,402.59001 L 154.79861,405.07341 L 147.90028,415.00702 L 148.17621,454.18955 L 140.17414,464.95095 L 140.45007,475.16049 L 123.34221,483.71442 L 113.13268,492.54429 L 110.09741,501.65009 L 90.50614,501.92602 L 88.29867,498.33889 L 87.19494,498.06295 z").attr(attr);
+			//Tlalpan >> tla
+            aus.tla = R.path("M 62.085003,490.88868 L 61.809069,493.64802 L 58.49787,495.30361 L 76.157609,505.23723 L 83.055941,547.73096 L 111.20114,614.2309 L 179.63262,657.2765 L 290.55783,665.83044 L 286.97069,658.1043 L 255.23836,628.57943 L 270.41469,594.36369 L 272.07029,568.7019 L 292.21343,583.87824 L 294.97276,541.38449 L 298.00803,536.14176 L 296.90429,507.72062 L 293.5931,505.78908 L 291.38563,508.27249 L 270.13876,508.54842 L 259.10142,499.16669 L 259.65329,495.57955 L 263.24042,492.54429 L 263.79229,487.30155 L 258.27363,481.50695 L 258.27363,463.84722 L 262.13669,463.57129 L 261.86075,454.46549 L 269.58689,454.74142 L 272.62216,456.94888 L 272.34622,460.53602 L 275.38149,460.53602 L 283.93542,449.77462 L 285.86696,434.87421 L 279.24455,428.52774 L 278.6927,409.48834 L 317.04743,399.27881 L 330.56817,390.44894 L 330.56817,386.86181 L 318.97897,387.13774 L 289.17816,374.72075 L 280.90016,385.48213 L 271.51843,384.93028 L 266.55162,392.38048 L 259.10142,391.55267 L 253.30682,384.93028 L 213.02055,384.65434 C 213.02055,384.65434 201.15542,379.68753 200.05169,379.68753 C 198.94796,379.68753 193.15336,379.68753 193.15336,379.68753 L 182.39195,376.10041 L 180.18448,373.34108 L 174.38988,374.16887 L 168.59528,379.96347 L 168.87122,384.10247 L 164.45628,394.58794 L 153.69488,395.9676 L 153.41894,401.7622 L 157.28202,405.07341 L 149.83181,416.11075 L 150.38367,454.46549 L 141.82974,465.50281 L 142.10568,476.81608 L 124.99781,485.09408 L 114.51235,494.19988 L 112.02894,504.13349 L 89.67834,504.13349 L 86.64307,499.99448 L 79.468801,499.99448 L 62.085003,490.88868 z").attr(attr);
+			//Milpa Alta >>mia
+            aus.mia = R.path("M 293.04122,665.5545 L 390.72164,717.42997 L 407.82951,680.73084 L 429.90418,665.00264 L 478.19251,671.3491 L 493.36885,682.38644 L 505.50992,665.00264 L 513.51198,609.2641 L 503.02651,590.50063 L 519.58251,570.90936 L 503.30245,561.80356 L 517.92692,555.73303 L 518.47878,545.24756 L 501.09498,532.00276 L 502.19872,519.03389 L 493.92071,517.37828 L 488.67798,508.27249 L 483.15932,508.82435 L 482.33151,500.54636 L 487.85019,494.47582 L 474.32945,482.05882 L 424.10958,482.05882 L 337.4665,505.23723 L 293.5931,587.7413 L 273.44995,572.28903 L 272.34622,595.46744 L 257.99769,627.75164 L 289.45409,657.82838 L 293.04122,665.5545 z").attr(attr);
+			//Coyoacan>>coy
+            aus.coy = R.path("M 280.62422,309.60047 L 239.51015,309.60047 L 239.23422,312.3598 L 234.26742,314.56727 L 234.81928,321.74154 L 229.02468,323.39713 L 226.54129,331.3992 L 220.74669,332.227 L 218.81515,339.6772 L 211.64088,339.6772 L 208.32968,341.3328 L 213.84836,345.74774 L 213.02055,357.33694 L 198.67202,378.03195 L 203.36289,378.03195 L 212.19275,382.17094 L 254.68649,382.99874 L 259.65329,389.06927 L 264.34415,389.89708 L 271.24249,382.72281 L 280.07236,382.99874 L 289.17816,371.68547 L 319.25489,385.20621 L 330.56817,385.20621 L 331.6719,354.02574 L 327.80883,354.85354 L 312.6325,336.64193 L 312.6325,330.29547 L 301.31922,316.77474 L 302.14703,308.2208 L 291.38563,307.11706 L 290.28189,309.87641 L 280.62422,309.60047 z").attr(attr);
+			//Iztapalapa>>izp
+            aus.izp = R.path("M 287.7985,281.7312 L 280.90016,307.94487 L 289.17816,307.94487 L 291.38563,304.9096 L 304.63042,306.5652 L 303.52669,315.94693 L 314.2881,329.7436 L 314.2881,335.5382 L 328.3607,352.922 L 334.43123,351.54234 L 333.87936,360.92407 L 364.23203,398.17508 L 370.85444,402.59001 L 379.68431,393.76014 L 379.68431,391.82861 L 377.75277,391.00081 L 376.09717,375.2726 L 382.44364,377.48007 L 390.99757,365.89087 L 395.41251,370.58174 L 398.17184,366.71867 L 401.2071,368.65021 L 412.7963,358.71661 L 456.66972,344.64401 L 485.09084,345.47181 L 486.47051,348.23114 L 490.33358,348.783 L 491.43731,347.1274 L 506.06178,346.2996 L 465.22365,302.70213 L 468.53485,290.83699 L 383.54737,254.13786 L 381.89177,272.6254 L 373.8897,274.281 L 350.43536,261.58806 L 349.60757,264.07146 L 344.0889,264.07146 L 336.08683,279.52373 L 300.76736,276.7644 L 300.49143,284.2146 L 287.7985,281.7312 z").attr(attr);
+			//Tlahuac>>thc
+            aus.thc = R.path("M 433.76724,467.15842 L 424.3855,480.40321 L 475.98505,480.67915 L 490.60952,495.02769 L 484.26305,500.82229 L 484.53898,506.89281 L 490.05765,506.61689 L 494.47258,515.7227 L 502.19872,517.37828 L 505.50992,515.17082 L 503.85432,496.95922 L 508.82111,496.95922 L 510.47671,492.26835 L 521.23812,493.37209 L 524.54932,488.12935 L 533.37919,494.19988 L 535.86258,481.50695 L 501.64685,473.78082 L 501.37091,445.35968 L 490.33358,445.35968 L 499.43939,371.68547 L 503.02651,372.51327 L 506.61365,369.75394 C 506.61365,369.75394 504.95805,356.2332 506.61365,356.50914 C 508.26925,356.78507 513.23605,357.61287 513.23605,357.61287 L 509.37298,353.74981 L 510.75265,352.37014 L 506.88958,348.50706 L 492.54104,348.783 L 490.33358,351.54234 L 484.53898,349.05894 L 483.98711,346.85148 L 456.39378,346.57554 L 413.34817,361.20001 L 402.31084,370.30581 L 398.72371,369.75394 L 395.13657,373.34108 L 391.54944,369.478 L 383.27143,379.13568 L 378.02871,378.03195 L 379.40837,390.173 L 382.1677,391.55267 L 382.1677,395.41575 L 372.78596,402.86594 L 390.72164,414.45514 L 409.76103,418.04227 L 421.35023,430.18335 L 439.00997,433.21861 L 438.45811,435.42608 L 445.63237,435.15015 L 443.14898,440.11695 L 446.18425,440.39288 L 450.32324,436.25388 L 453.63445,437.35761 L 451.70291,463.29535 L 444.52864,465.50281 L 443.70084,459.98415 L 440.94151,460.26009 L 439.28591,468.53808 L 433.76724,467.15842 z").attr(attr);
+			//Xochimilco>> xoc
+            aus.xoc = R.path("M 333.87936,364.23528 L 332.49969,391.82861 L 317.32336,401.21035 L 280.90016,411.14394 L 280.90016,427.14807 L 288.35036,435.70202 L 285.31509,451.43021 L 275.93336,463.29535 L 270.69062,463.01941 L 270.69062,458.05261 L 269.03502,456.67295 L 263.24042,456.12108 L 263.79229,466.05468 L 260.20515,466.33062 L 260.20515,480.67915 L 265.44789,487.30155 L 264.89602,494.47582 L 261.58482,496.68328 L 261.58482,498.89075 L 270.13876,506.06502 L 290.55783,506.06502 L 293.31716,503.30569 L 299.66363,507.44469 L 300.21549,536.69362 L 296.62836,542.76415 L 294.69683,582.49856 L 336.91462,502.75382 L 422.7299,480.12729 L 433.21537,464.67502 L 437.35438,466.33062 L 439.56184,457.77669 L 444.25271,457.77669 L 446.46017,463.29535 L 450.32324,461.36382 L 451.15104,439.01321 L 450.04731,438.18542 L 447.01204,441.77254 L 440.94151,441.77254 L 442.87304,437.63354 L 435.42284,437.63354 L 437.07844,434.87421 L 419.97057,432.11488 L 408.38137,419.69788 L 389.61791,416.38668 L 362.3005,400.10662 L 333.87936,364.23528 z").attr(attr);
+			
+            var current = null;
+            for (var state in aus) {
+                aus[state].color = Raphael.getColor();
+                (function (st, state) {
+                    st[0].style.cursor = "pointer";
+                    st[0].onmouseover = function () {
+                        current && aus[current].animate({fill: "#333", stroke: "#666"}, 500) && (document.getElementById(current).style.display = "");
+                        st.animate({fill: st.color, stroke: "#ccc"}, 500);
+                        st.toFront();
+                        R.safari();
+                        document.getElementById(state).style.display = "block";
+                        current = state;
+                    };
+                    st[0].onmouseout = function () {
+                        st.animate({fill: "#333", stroke: "#666"}, 500);
+                        st.toFront();
+                        R.safari();
+                    };
+                    if (state == "bjn") {
+                        st[0].onmouseover();
+                    }
+                })(aus[state], state);
+            }
+        };
+        </script> 
+    </head> 
+    <body> 
+        <div id="canvas"> 
+            <div id="paper"></div>  
+			<!-- Inicia informacion de las 16 delegacione del DF -->
+			<div id="aob"> 
+			    <h2>Alvaro Obreg&oacute;n</h2> 
+			    <p> 
+			    Su nombre es un reconocimiento a &Aacute;lvaro
+				Obreg&oacute;n, el vencedor de la batalla de Celaya, que
+				enfrent&oacute; al Ej&eacute;rcito Constitucionalista contra la
+				Divisi&oacute;n del Norte de Pancho Villa.
+			    </p> 
+			</div>
+			<div id="azc"> 
+			    <h2>Azcapotzalco</h2> 
+			    <p> 
+				Dada la importancia hist&oacute;rica del alt&eacute;petl Azcapotzalco
+				en la historia del periodo Poscl&aacute;sico y en la Cuenca de
+				M&eacute;xico los &uacute;ltimos dos siglos de la existencia
+				mesoamericana, el glifo de Azcapotzalco, una hormiga sobre un
+				mont&iacute;culo, aparece en documentos hist&oacute;ricos como el
+				C&oacute;dice X&oacute;lotl, el C&oacute;dice Mendocino, la
+				Matr&iacute;cula de Tributos y esculturas como la Piedra de
+				T&iacute;zoc.
+			    </p> 
+			</div>
+			<div id="bjr"> 
+			    <h2>Benito Ju&aacute;rez</h2> 
+			    <p> 
+				Siendo
+				el jefe del Departamento del Distrito Federal, Octavio Sent&iacute;es
+				G&oacute;mez, el 30 de diciembre de 1972 decidi&oacute; otorgarle a
+				esta demarcaci&oacute;n el nombre<span class="Apple-converted-space">&nbsp;</span><a
+				href="http://es.wikipedia.org/wiki/Benito_Ju%C3%A1rez"
+				title="Benito Ju&aacute;rez"
+				style="text-decoration: none; color: rgb(6, 69, 173); background-image: none;">Benito
+				Ju&aacute;rez</a>, en alusi&oacute;n al pol&iacute;tico, abogado
+				liberal y ex-presidente de M&eacute;xico.
+			    </p> 
+			</div>
+			<div id="coy"> 
+			    <h2>Coyoac&aacute;n</h2> 
+			    <p> 
+				El vocablo Coyoac&aacute;n se deriva de la palabra n&aacute;huatl
+				Coyohuac&aacute;n. Existen varias acepciones al t&eacute;rmino como
+				son: coyote flaco, lugar de los pozos de agua, y territorio de agua del
+				adive o coyote. Sin embargo la versi&oacute;n m&aacute;s aceptada es la
+				que lo define como: lugar de los que tienen o poseen coyotes, basada en
+				la explicaci&oacute;n del top&oacute;nimo original, que se compone de
+				tres voces nahuas: coyotl, coyote; hua, posesi&oacute;n y can, lugar
+			    </p> 
+			</div>
+			<div id="cjm"> 
+			    <h2>Cuajimalpa</h2> 
+			    <p> 
+				El actual nombre viene de la palabra n&aacute;huatl Cuauhxīmalpan que
+				se compone de cuahu (i)-tl, que significa &aacute;rbol o madera; con el
+				verbo transitivo xīma (xīmal-li), que con complemento de cosa, expresa
+				el concepto de carpintear, labrar o pulir, seguida de una l formativa y
+				de la preposici&oacute;n locativa -pan su acepci&oacute;n siendo
+				"encima", "sobre", "en". As&iacute; con los dos primeros elementos se
+				forma cuauhxīmal-li, acepilladura o astilla peque&ntilde;a que, en
+				composici&oacute;n, pierde el sufijo formulativo li (af&eacute;resis de
+				tli, perdida la t por hallarse entre dos eles) y con la
+				posposici&oacute;n que viene a significar "sobre las astillas de
+				madera" y designa un lugar donde &eacute;sta se labra
+			    </p> 
+			</div>
+			<div id="cua"> 
+			    <h2>Cuauht&eacute;moc</h2> 
+			    <p> 
+				Esta
+				Delegaci&oacute;n toma su nombre del &uacute;ltimo se&ntilde;or de los
+				mexicas, quien reorganiz&oacute; al ej&eacute;rcito y al pueblo contra
+				el ataque de los conquistadores. Cuauht&eacute;moc es un nombre
+				n&aacute;huatl proveniente de las voces cuauhtli, "&aacute;guila", y
+				t&eacute;moc, "que baja", como modo de aludir al sol (el &aacute;guila)
+				en el atardecer.
+			    </p> 
+			</div>
+			<div id="gam"> 
+			    <h2>Gustavo A. Madero</h2> 
+			    <p> 
+				En 1828 se da a la Villa de Guadalupe Hidalgo (nombre tradicional de la
+				localidad) el t&iacute;tulo de ciudad. En 1848, en lo que actualmente
+				es Gustavo A. Madero, se dio la firma del Tratado de Guadalupe-Hidalgo.
+				En 1931 pasa a ser delegaci&oacute;n del Distrito Federal con el nombre
+				de Villa de Gustavo A. Madero, que en 1941 cambia al nombre actual de
+				Delegaci&oacute;n Gustavo A. Madero.
+			    </p> 
+			</div>
+			<div id="izc"> 
+			    <h2>Iztacalco</h2> 
+			    <p> 
+				Como en el caso de otros top&oacute;nimos prehisp&aacute;nicos, la
+				palabra Iztacalco tiene m&uacute;ltiples interpretaciones. La
+				m&aacute;s aceptada de ellas es En la casa de la sal (n&aacute;huatl:
+				&iacute;xtatl = sal; calli = casa; y -co = sufijo de lugar). Otras
+				interpretaciones sugieren que el nombre de Iztacalco significa Lugar de
+				casas blancas (n&aacute;huatl: &iacute;ztac = blanco; calli = casa; -co
+				= lugar). Antiguamente, Iztacalco se escrib&iacute;a con x en lugar de
+				z, pero a partir de la segunda mitad del siglo XX se populariz&oacute;
+				la escritura con la segunda graf&iacute;a, y es la que se emplea
+				oficialmente
+			    </p> 
+			</div>
+			<div id="izp"> 
+			    <h2>Iztapalapa</h2> 
+			    <p> 
+				Su nombre proviene de las palabras nahuas Iztapalli (losa o laja), atl
+				(agua) y pan (sobre las aguas alegres)&laquo;N&aacute;huatl&raquo; (en
+				espa&ntilde;ol). Consultado el 9 de abril de 2011. Por lo tanto, quiere
+				decir: Sobre las losas del agua o En el agua de las lajas. Esto deriba
+				a que esta demarcaci&oacute;n junto con otros espacios aleda&ntilde;os,
+				tuvo sus asentamientos en parte firme y en agua mediante chinampas.
+				&laquo;Historia y Fundaci&oacute;n de Iztapalapa&raquo; (en
+				espa&ntilde;ol). Consultado el 9 de abril de 2011. La toponimia de
+				Iztapalapa hace alusi&oacute;n a su antigua situaci&oacute;n
+				ribere&ntilde;a del lago de Texcoco.
+			    </p> 
+			</div>
+			<div id="mac"> 
+			    <h2>Magdalena Contreras</h2> 
+			    <p> 
+				El nombre de la delegaci&oacute;n proviene de la llegada evangelizadora
+				en el siglo XVII de los franciscanos y los dominicos en la que se
+				erigi&oacute; una ermita bajo la advocaci&oacute;n de Santa
+				Mar&iacute;a Magdalena, en donde congregaron por entonces a los
+				naturales de la zona. El Se&ntilde;or de Contreras es una escultura de
+				madera de tama&ntilde;o natural con la representaci&oacute;n de
+				Jes&uacute;s. El original se encuentra en la actualidad en el Convento
+				de El Carmen en San &Aacute;ngel. A la imagen se le atribuyen poderes
+				milagrosos y fue propiedad de Tom&aacute;s de Contreras.
+			    </p> 
+			</div>
+			<div id="mih"> 
+			    <h2>Miguel Hidalgo</h2> 
+			    <p> 
+				Su nombre es un reconocimiento a Miguel Hidalgo y Costilla, sacerdote y
+				militar que particip&oacute; en la primera etapa de la guerra de
+				Independencia de M&eacute;xico, y al que se conoce tambi&eacute;n como
+				padre de la patria.
+			    </p> 
+			</div>
+			<div id="mia"> 
+			    <h2>Milpa Alta</h2> 
+			    <p> 
+				Milpa Alta toma su nombre de la Villa de Nuestra Se&ntilde;ora de la
+				Asunci&oacute;n de Milpa Alta, una comunidad fundada por frailes
+				franciscanos en el siglo XVI. Milpa es una palabra del espa&ntilde;ol
+				mexicano que designa los campos donde se cultiva el ma&iacute;z en
+				asociaci&oacute;n con otros vegetales. Proviene del n&aacute;huatl
+				milpan, t&eacute;rmino con el que se designa cualquier campo cultivado.
+				Cuando los espa&ntilde;oles fundaron la villa de Milpa Alta, lo
+				hicieron sobre un asentamiento ind&iacute;gena cuyo nombre era
+				Malacacht&eacute;pec-Momoxco, que en n&aacute;huatl significa Lugar
+				rodeado de cerros donde hay t&uacute;mulos funerarios.
+			    </p> 
+			</div>
+			<div id="thc"> 
+			    <h2>Tl&aacute;huac</h2> 
+			    <p> 
+				Tl&aacute;huac es un top&oacute;nimo de origen n&aacute;huatl. Es
+				af&eacute;resis de Cuitl&aacute;huac, el nombre que tuvo originalmente
+				San Pedro Tl&aacute;huac, la cabecera delegacional, y aparece
+				registrado en numerosas fuentes hist&oacute;ricas. Se han propuesto
+				varias interpretaciones del top&oacute;nimo. Carlos Montemayor dice que
+				Cuitl&aacute;huac significa Lugar de los que tienen desecho.
+			    </p> 
+			</div>	
+			<div id="tla"> 
+			    <h2>Tlalpan</h2> 
+			    <p> 
+				Su nombre tiene origen en el pueblo prehisp&aacute;nico de Tlalli pan
+				(del n&aacute;huatl, "lugar sobre tierra"). El nombre n&aacute;huatl
+				alude a su condici&oacute;n de poblaci&oacute;n sobre tierra firme, ya
+				que Tlalpan se encuentra al sur de lo que fuera el lago de Texcoco,
+				siendo la primera poblaci&oacute;n sobre tierra firme que un viajero
+				encontraba saliendo de Tenochtitl&aacute;n (capital del imperio
+				azteca), con direcci&oacute;n al sur.
+			    </p> 
+			</div>	
+			<div id="vec"> 
+			    <h2>Venustiano Carranza</h2> 
+			    <p> 
+				Se encuentra en la zona centro-oriente de la Ciudad de M&eacute;xico.
+				Colinda al norte con la delegaci&oacute;n Gustavo A. Madero, al
+				poniente con la delegaci&oacute;n Cuauht&eacute;moc, al sur con la
+				delegaci&oacute;n Iztacalco y al oriente con el Estado de
+				M&eacute;xico. Este nombre fue usado en honor a Venustiano Carranza,
+				jefe revolucionario que promulg&oacute; la Constituci&oacute;n Mexicana
+				de 1917.
+			    </p> 
+			</div>
+			<div id="xoc"> 
+			    <h2>Xochimilco</h2> 
+			    <p> 
+				Xochimilco es un top&oacute;nimo de origen n&aacute;huatl. Deriva de
+				las palabras xōchi(tl) (flor); mīl(li) (campo cultivado); y -co
+				(locativo). Por lo tanto, se puede traducir como Lugar en la sementera
+				de las flores o Campo de flores.4 El emblema actual de la
+				delegaci&oacute;n Xochimilco no est&aacute; reglamentado por ninguna
+				ley. Se deriva de las representaciones conocidas de la &eacute;poca
+				prehisp&aacute;nica que pudieron conservarse en documentos
+				hist&oacute;ricos de origen colonial, como los c&oacute;dices nahuas
+				del centro de M&eacute;xico&nbsp;
+			    </p> 
+			</div>			
+			<!-- Termina informacion de las 16 delegaciones-->
+        </div> 
+        <p id="copy">Basado en una demostraci&oacute;n de <a href="http://raphaeljs.com/">Raphaël</a>—JavaScript Vector Library<br/> para <a href="http://www.tidyslice.com/">tidyslice.com</a></p> 
+    </body> 
+</html>

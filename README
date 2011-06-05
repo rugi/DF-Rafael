@@ -1,0 +1,29 @@
+Ejemplo de uso de Rafael.
+
+Caso de ejemplo, el mapa con las delegaciones del DF.
+
+Construido para http://www.tidyslice.com
+
+Este ejemplo utiliza:
+1.
+http://raphaeljs.com/
+Version 1.5.2
+
+2. 
+Informaci—n de la wikipedia.
+http://es.wikipedia.org/wiki/Delegaciones_del_Distrito_Federal_(M%C3%A9xico)
+
+3.
+http://es.wikipedia.org/wiki/Archivo:Mapa_M%C3%A9xico,_D._F..svg
+
+---
+RuGI
+
+
+EXTRA:
+Estos archivos han sido replicados a este repositorio respetando sus
+respectivas licencias:
+
+http://raphaeljs.com/license.html
+
+Si consideras que se violenta alguna de estas licencias, comunicare conmigo y el archivo en cuesti—n ser‡ removido.
