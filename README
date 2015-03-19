@@ -1,8 +1,15 @@
 Ejemplo de uso de Rafael.
 
-Caso de ejemplo, el mapa con las delegaciones del DF.
+UPDATE 18-04-2015
+Originalmente para probar SVG usando RAFAEL con el mapa del DF
+Se agrega mapa de MX, se agrega evento en click del DF sobre mapa MX
 
-Construido para http://www.tidyslice.com
+
+Construido para 
+           http://www.tidyslice.com, 
+Ahora con patrocinio de :
+          http://codigoambar.io/
+
 
 Este ejemplo utiliza:
 1.
@@ -11,7 +18,10 @@ Version 1.5.2
 
 2. 
 Informaci—n de la wikipedia.
+Mapa del DF
 http://es.wikipedia.org/wiki/Delegaciones_del_Distrito_Federal_(M%C3%A9xico)
+Mapa de MX:
+http://upload.wikimedia.org/wikipedia/commons/8/8d/Circunscripciones_2006.svg
 
 3.
 http://es.wikipedia.org/wiki/Archivo:Mapa_M%C3%A9xico,_D._F..svg
